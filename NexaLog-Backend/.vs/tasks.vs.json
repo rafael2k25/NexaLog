@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tarefa-NexaLog-Backend",
+      "appliesTo": "/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "tarefa-NexaLog-Backend",
+      "appliesTo": "NexaLog-Backend.sln",
+      "type": "launch"
+    }
+  ]
+}
