@@ -1,15 +1,17 @@
 namespace NexaLog_Backend.Models
 {
-	public class Lote
-	{
-		public int IdLot { get; set; }
-		public int QuantidadeLote { get; set; }
+    public class Lote
+    {
+        public int IdLote { get; set; }
 
-		public string CodLote { get; set; } = string.Empty;
+        public int QuantidadeLote { get; set; }
 
-		public DateTime DataValidade { get; set; }
-		public DateTime DataFabricacao { get; set; }
+        public string CodLote { get; set; } = string.Empty;
 
-		public int FkProdutoIdProduto { get; set; }
-	}
+        public DateTime DataValidade { get; set; }
+
+        public DateTime DataFabricacao { get; set; }
+
+        public int FkProdutoIdProduto { get; set; }
+    }
 }
