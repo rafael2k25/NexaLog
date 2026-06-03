@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/zsfGW26G35GG4Z+TAP+VMK80eg5GAQcZTM+3M1u2bCjBYifY+brOUZ4u8I44U8dmdZKLUUI+hqkef6IgIqdGA==",
+  "dgSpecHash": "2clvsmtpapcXXM8WEKHdwRgWGmv6+hEl0rU7hEN8SgA9rrKDqWYQ1sfLkeQIHbrV4GG3TAg8tmkyhppHv1t05g==",
   "success": true,
-  "projectFilePath": "E:\\NexaLog\\NexaLog\\NexaLog-Backend\\NexaLog-Backend\\NexaLog-Backend.csproj",
+  "projectFilePath": "E:\\Raípastanova1\\NexaLog\\NexaLog-Backend\\NexaLog-Backend\\NexaLog-Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tarde.cetafaju\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\tarde.cetafaju\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

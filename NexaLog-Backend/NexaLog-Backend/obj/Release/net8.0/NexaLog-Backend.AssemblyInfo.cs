@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NexaLog-Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f0fdcd10a91ee05829d3a2075c9c9723cdb4e6b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+557d5b696b3d1e7ce3a6cfbbf7ae5a1df4ac8e1a")]
 [assembly: System.Reflection.AssemblyProductAttribute("NexaLog-Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NexaLog-Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
