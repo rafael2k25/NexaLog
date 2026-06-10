@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\TioSam\\NexaLog-main\\NexaLog\\NexaLog-Backend\\NexaLog-Backend\\NexaLog-Backend.csproj": {}
+    "E:\\NexaLog\\NexaLog\\NexaLog-Backend\\NexaLog-Backend\\NexaLog-Backend.csproj": {}
   },
   "projects": {
-    "E:\\TioSam\\NexaLog-main\\NexaLog\\NexaLog-Backend\\NexaLog-Backend\\NexaLog-Backend.csproj": {
+    "E:\\NexaLog\\NexaLog\\NexaLog-Backend\\NexaLog-Backend\\NexaLog-Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\TioSam\\NexaLog-main\\NexaLog\\NexaLog-Backend\\NexaLog-Backend\\NexaLog-Backend.csproj",
+        "projectUniqueName": "E:\\NexaLog\\NexaLog\\NexaLog-Backend\\NexaLog-Backend\\NexaLog-Backend.csproj",
         "projectName": "NexaLog-Backend",
-        "projectPath": "E:\\TioSam\\NexaLog-main\\NexaLog\\NexaLog-Backend\\NexaLog-Backend\\NexaLog-Backend.csproj",
+        "projectPath": "E:\\NexaLog\\NexaLog\\NexaLog-Backend\\NexaLog-Backend\\NexaLog-Backend.csproj",
         "packagesPath": "C:\\Users\\tarde.cetafaju\\.nuget\\packages\\",
-        "outputPath": "E:\\TioSam\\NexaLog-main\\NexaLog\\NexaLog-Backend\\NexaLog-Backend\\obj\\",
+        "outputPath": "E:\\NexaLog\\NexaLog\\NexaLog-Backend\\NexaLog-Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
