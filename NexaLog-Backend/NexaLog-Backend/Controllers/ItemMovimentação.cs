@@ -1,6 +1,97 @@
-﻿namespace NexaLog_Backend.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using NexaLog_Backend.Data;
+using NexaLog_Backend.Models;
+
+namespace NexaLog_Backend.Controllers
 {
-    public class ItemMovimentação
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ItemMovimentacaoController : ControllerBase
     {
+        private readonly NexaLogContext _context;
+
+        public ItemMovimentacaoController(NexaLogContext context)
+        {
+            _context = context;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ItemMovimentacao>>> GetItensMovimentacao()
+        {
+            return await _context.ItensMovimentacao.ToListAsync();
+        }
+
+        [HttpGet("{idProduto}/{idMovimentacao}")]
+        public async Task<ActionResult<ItemMovimentacao>> GetItemMovimentacao(int idProduto, int idMovimentacao)
+        {
+            var item = await _context.ItensMovimentacao.FindAsync(idProduto, idMovimentacao);
+
+            if (item == null)
+                return NotFound();
+
+            return item;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<ItemMovimentacao>> PostItemMovimentacao(ItemMovimentacao item)
+        {
+            var produtoExiste = await _context.Produtos
+                .AnyAsync(p => p.IdProduto == item.FkProdutoIdProduto);
+
+            if (!produtoExiste)
+                return BadRequest("Produto não encontrado.");
+
+            var movimentacaoExiste = await _context.Movimentacoes
+                .AnyAsync(m => m.IdMovimentacao == item.FkMovimentacaoIdMovimentacao);
+
+            if (!movimentacaoExiste)
+                return BadRequest("Movimentação não encontrada.");
+
+            _context.ItensMovimentacao.Add(item);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(
+                nameof(GetItemMovimentacao),
+                new
+                {
+                    idProduto = item.FkProdutoIdProduto,
+                    idMovimentacao = item.FkMovimentacaoIdMovimentacao
+                },
+                item
+            );
+        }
+
+        [HttpPut("{idProduto}/{idMovimentacao}")]
+        public async Task<IActionResult> PutItemMovimentacao(
+            int idProduto,
+            int idMovimentacao,
+            ItemMovimentacao item)
+        {
+            if (idProduto != item.FkProdutoIdProduto ||
+                idMovimentacao != item.FkMovimentacaoIdMovimentacao)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(item).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{idProduto}/{idMovimentacao}")]
+        public async Task<IActionResult> DeleteItemMovimentacao(int idProduto, int idMovimentacao)
+        {
+            var item = await _context.ItensMovimentacao.FindAsync(idProduto, idMovimentacao);
+
+            if (item == null)
+                return NotFound();
+
+            _context.ItensMovimentacao.Remove(item);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

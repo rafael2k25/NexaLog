@@ -1,5 +1,129 @@
 [
   {
+    "ContainingType": "NexaLog_Backend.Controllers.ItemMovimentacaoController",
+    "Method": "GetItensMovimentacao",
+    "RelativePath": "api/ItemMovimentacao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[NexaLog_Backend.Models.ItemMovimentacao, NexaLog-Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "NexaLog_Backend.Controllers.ItemMovimentacaoController",
+    "Method": "PostItemMovimentacao",
+    "RelativePath": "api/ItemMovimentacao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "item",
+        "Type": "NexaLog_Backend.Models.ItemMovimentacao",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "NexaLog_Backend.Models.ItemMovimentacao",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "NexaLog_Backend.Controllers.ItemMovimentacaoController",
+    "Method": "GetItemMovimentacao",
+    "RelativePath": "api/ItemMovimentacao/{idProduto}/{idMovimentacao}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idProduto",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idMovimentacao",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "NexaLog_Backend.Models.ItemMovimentacao",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "NexaLog_Backend.Controllers.ItemMovimentacaoController",
+    "Method": "PutItemMovimentacao",
+    "RelativePath": "api/ItemMovimentacao/{idProduto}/{idMovimentacao}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idProduto",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idMovimentacao",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "item",
+        "Type": "NexaLog_Backend.Models.ItemMovimentacao",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexaLog_Backend.Controllers.ItemMovimentacaoController",
+    "Method": "DeleteItemMovimentacao",
+    "RelativePath": "api/ItemMovimentacao/{idProduto}/{idMovimentacao}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idProduto",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idMovimentacao",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "NexaLog_Backend.Controllers.LoteController",
     "Method": "GetLotes",
     "RelativePath": "api/Lote",
