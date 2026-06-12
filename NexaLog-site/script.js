@@ -1,39 +1,58 @@
+const API_URL = "https://localhost:7071/api";
 let produtos = 
 JSON.parse(localStorage.getItem("produtos")) || [];
 
 // Login
 function showCadastro() {trocarTela("cadastroPage");}
 function voltarLogin() {trocarTela("loginPage");}
-function login(){
-
+async function login(){
   const email = document.getElementById("loginEmail").value.trim();
   const senha = document.getElementById("loginSenha").value;
 
-  if(!email || !email.includes("@")){
-    alert("Digite um e‑mail válido");
+  if (!email || !email.includes("@")) {
+    alert("Digite um e-mail válido");
     return;
   }
 
-  if(!senha || senha.length < 8){
-    alert("A senha deve ter no mínimo 8 caracteres");
+  if (!senha) {
+    alert("Digite sua senha");
     return;
   }
 
-  let cargo = "Admin"; // Cargo padrão
+  try {
+    const resposta = await fetch(`${API_URL}/Usuario/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        email: email,
+        senha: senha
+      })
+    });
 
-  if(email.endsWith("@gestor.3irmaos.br")){
-    cargo = "Gestor";
-  }
-  else if(email.endsWith("@operador.3irmaos.br")){
-    cargo = "Operador de Estq.";
-  }
+    if (!resposta.ok) {
+      alert("Email ou senha inválidos");
+      return;
+    }
 
-  localStorage.setItem("cargoUsuario", cargo);
-  localStorage.setItem("loginEmail", email);
-  entrarSistema();
+    const usuario = await resposta.json();
+
+    localStorage.setItem("nomeUsuario", usuario.nome);
+    localStorage.setItem("cargoUsuario", usuario.tipoUsuario);
+    localStorage.setItem("loginEmail", email);
+
+    entrarSistema();
+
+  } catch (erro) {
+    console.error(erro);
+    alert("Erro ao conectar com o servidor");
+  }
 }
 
-// Passa de um espaço númerico para outro na verificação
+
+// Passa de um espaço numérico para outro na verificação
 
 document.querySelectorAll("#verificacaoPage .codigo input")
 .forEach((input, index, arr) => {
@@ -426,7 +445,7 @@ function gerarDescricaoAutomatica(nome){
     return "Produto alimentício utilizado no preparo de refeições. Conservar em local seco e arejado.";
   }
   // Mensagem padronizada
-  return `Produto ${nome} destinado ao uso comercial. Verifique validade e condições de armazenamento.`;
+  return `${nome}, produto destinado ao uso comercial. Verifique validade e condições de armazenamento.`;
 }
 // Init
 
