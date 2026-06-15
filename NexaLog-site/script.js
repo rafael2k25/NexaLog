@@ -399,11 +399,11 @@ function gerarRespostaIA(pergunta){
     return "Ainda não há produtos cadastrados.";
   }
 
-  if(pergunta.includes("quantidade") || pergunta.includes("total")){
+  if(pergunta.includes("quantidade") || pergunta.includes("total") || pergunta.includes("quantos")){
     return `Existem atualmente ${produtos.length} produtos cadastrados.`;
   }
 
-  if(pergunta.includes("vencido") || pergunta.includes("vencendo")){
+  if(pergunta.includes("vencido") || pergunta.includes("vencendo") || pergunta.includes("vencidos")){
     const vencidos = produtos.filter(p => diasRestantes(p.validade) < 0);
     if(vencidos.length === 0){
       return "Nenhum produto está vencido.";
@@ -411,7 +411,7 @@ function gerarRespostaIA(pergunta){
     return "Produtos vencidos: " + vencidos.map(p => p.nome).join(", ");
   }
 
-  if(pergunta.includes("baixo") || pergunta.includes("acabando")){
+  if(pergunta.includes("baixo") || pergunta.includes("acabando") || pergunta.includes("abaixo")){
     const baixos = produtos.filter(p => p.quantidade <= 5);
     if(baixos.length === 0){
       return "Nenhum produto está com estoque baixo.";
