@@ -1,4 +1,5 @@
-const API_URL = "https://localhost:7071/api";
+const API_URL = "http://localhost:5146/";
+const API_USUARIO = "http://localhost:5146/api/Usuario";
 let produtos = 
 JSON.parse(localStorage.getItem("produtos")) || [];
 
@@ -20,7 +21,7 @@ async function login(){
   }
 
   try {
-    const resposta = await fetch(`${API_URL}/Usuario/login`, {
+    const resposta = await fetch(`${API_USUARIO}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
